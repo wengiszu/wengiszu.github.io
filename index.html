@@ -2,16 +2,38 @@
 <html>
 <head>
   <meta charset="utf-8" />
-<title>Welcome to wengiszu page</title>
-<style>
-html { color-scheme: light dark; }
-body { width: 35em; margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif; }
-</style>
+  <title>Welcome to wengiszu page</title>
+  <style>
+    html { color-scheme: light dark; }
+    body {
+      width: 35em;
+      margin: 0 auto;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+    #clock {
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: #007ACC;
+    }
+  </style>
 </head>
 <body>
-<h1>Welcome to wengiszu page</h1>
-<p><em>Thank you for coming</em></p>
-<p>謝謝蒞臨</p>
+  <h1>Welcome to wengiszu page</h1>
+  <p><em>Thank you for coming</em></p>
+  <p>謝謝蒞臨</p>
+  <div id="clock">載入時間中...</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toLocaleString(); // 可顯示日期和時間
+      document.getElementById('clock').textContent = "現在時間：" + timeString;
+    }
+
+    // 每秒更新一次時間
+    setInterval(updateClock, 1000);
+    // 頁面載入時馬上執行一次
+    updateClock();
+  </script>
 </body>
 </html>
